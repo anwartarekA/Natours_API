@@ -1,0 +1,13 @@
+extends  base
+
+block content
+    form.formloginOrsignup
+        p log into your account 
+        .inputs 
+            label(for='email').email-address Email address
+            .email-detail
+                input.email(type='email' id='email' placeholder = 'your@example.com' required)
+            label(for='pass').pass-address Password 
+            .password-detail
+                input.pass(type='password' id='pass' placeholder='••••••••' required)
+        input(type='submit' value='login')

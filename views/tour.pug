@@ -1,0 +1,96 @@
+extends base
+
+block append head 
+    script(src='https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js',crossorigin)
+    link(href='https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css' ,rel='stylesheet',crossorigin)
+mixin reviews-list (review)
+    .review
+        .review-head
+            img(src=`/images/users/${review.user.photo}`, alt='user')
+            p.user-name #{review.user.name}
+        .card-desc 
+            p.review-desc  #{review.review}
+            .review-stars
+                .stars
+                    each star in [1,2,3,4,5]
+                       - if(review.rating >= star)
+                           i(class='fa-regular fa-star active')
+                       - else     
+                           i(class='fa-regular fa-star unactive')
+block  content 
+    main.main2 
+        .main-header
+            .main-header__shape   
+                .main-header__shape__layout
+                img.main-header-image(src=`/images/tours/${tour.imageCover}` alt='image')
+            .main-header-details
+                h1.main-header-heading
+                    span #{tour.name}
+                .main-header-desc
+                    .main-header-duration
+                        i.fa-regular.fa-clock
+                        span.days|  #{tour.duration}days
+                    .main-header-loc
+                        i.fa-solid.fa-location-dot
+                        span.city|  #{tour.startLocation.description}
+        section.main-facts
+            .statistics
+                .quick-facts
+                    h2 Quick facts
+                    .start-date
+                        i.fa-regular.fa-calendar
+                        span.date-title next date
+                        - const date  = tour.startDates[0].toLocaleString('en-US',{month:'long',year:'numeric'})
+                        span.date-text= date 
+                    .difficulty
+                        i.fa-solid.fa-arrow-trend-up
+                        span.difficuty-title Difficulty
+                        span.difficulty-text #{tour.difficulty}
+                    .participants
+                        i.fa-regular.fa-user
+                        span.participants-title Participants
+                        span.participants-text #{tour.maxGroupSize}
+                    .rating
+                        i.fa-regular.fa-star
+                        span.star-title rating
+                        span.star-text= `${tour.ratingsAverage} / 5`
+                .tour-guides-details
+                    h2  Your tour guides
+                    .tour-guides
+                        .guide-details
+                            each guide in tour.guides 
+                                .guide-details-inner  
+                                    img(src=`/images/users/${guide.photo}` alt='guide')
+                                    - if(guide.role==='lead-guide')
+                                        span.guide-role #{guide.role}
+                                    - if(guide.role === 'guide')
+                                        span.guide-role tour-guide
+                                    span.guide-name #{guide.name}
+            .quick-description
+                h2.desc  About The Sea Explorer tour
+                .paragraphs
+                    - const paragraphs = tour.description.split('\n')
+                    each p in paragraphs 
+                        p= p 
+        .tour-imgs
+            each img in tour.images 
+               img(src=`/images/tours/${img}` alt=`${img}`)
+        #map(data-locations=`${JSON.stringify(tour.locations)}`)
+        section.reviews
+            .reviews-card
+                each review in tour.reviews     
+                    +reviews-list(review)
+        .booking-tour
+            .pics
+                .green-logo
+                    img(src='/images/logo-white.png' alt='logo')
+                img(src="/images/tours/tour-3-3.jpg", alt="tour-3-3")
+                img(src="/images/tours/tour-3-1.jpg", alt="tour-3-1")
+            .booking-content
+                .booking-details
+                    h2 What are you waiting for?
+                    p 7 days. 1 adventure. Infinite memories. Make it yours today!
+                if(user)
+                    button.inner-link(data-tour-id=`${tour.id}`) BOOK TOUR 
+                else 
+                    a.inner-link(href="/login") log in to book tour

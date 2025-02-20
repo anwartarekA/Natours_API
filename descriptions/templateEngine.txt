@@ -1,0 +1,3 @@
+now we need to build server side rendering so we need to build templates at server (html ,css , js ,images)
+so we need template engine to build and render these templates we will use pug but there are other template engine
+handlebars and EGS . pug is simple whitespace sensetive for writing html it certain with name and indetation

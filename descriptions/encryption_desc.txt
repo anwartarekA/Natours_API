@@ -1,0 +1,14 @@
+one of the importtant fundamentals of authentication is not store the plain context password into the database
+you should encrypt it to make it very strong aganist brute force attacks 
+to make this encryption i will use bcryptjs for this encryption
+bycryptjs ----> it is a javascript implementation for encryption
+this module is third party module that we can install it into our application  ---> npm i bycryptjs
+this module use hash function to hash the password (encrypt it)
+hash function takes two parameters :-
+1- the string that we want to hash it
+2- salt or cost parameter by default 12
+this module use sceure hash algorithm (sha256) make salt first means generate the random string even the two same 
+password will not be the same after it it will make hash to the salted password sha256(salt+password)
+we can use use cost parameter 8 since the 20 years ago but now as the more and more of computer power we can use 12 
+salt---> measure how cpu intensive the operation will take and control the time of operation 
+the more cost parameter the more and more cpu intensive and more time and more encryption

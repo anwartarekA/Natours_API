@@ -1,0 +1,65 @@
+extends base
+
+block  content 
+    section.account_page
+        aside.my-things
+            ul
+                li.settings: a.setting-text(href='#')
+                                i.fa-solid.fa-gear
+                                | settings
+                li.bookings: a.booking-text(href='/my-tours')
+                                i.fa-solid.fa-suitcase-rolling
+                                | bookings
+                li.rev: a.review-text(href='#')
+                                i.fa-regular.fa-star
+                                | reviews
+                li.billings: a.billing-text(href='#')
+                                i.fa-solid.fa-wallet
+                                | billings
+            - if(user.role ==='admin')
+                h2.admin admin 
+                ul.ul2
+                    li: a(href='#')
+                            i.fa-solid.fa-list-check
+                            | manage tours
+                    li: a(href='#')
+                            i.fa-solid.fa-users
+                            | manage users
+                    li: a(href='#')
+                            i.fa-regular.fa-star
+                            | manage reviews
+                    li: a(href='#')
+                            i.fa-solid.fa-receipt
+                            | manage bookings
+        .update-forms  
+            .update-name-email
+                h1 your account settings
+                //- form(action="/submit-user-data" method='POST' enctype='multipart/form-data' accept='image/*').updateData
+                form().updateData
+                    .update-name
+                        label.update-myname name
+                        div
+                           input.updateMe.update-mynameing(value =`${user.name}` type="text" name='name' placeholder=`${user.name}`)
+                    .update-email
+                        label.update-myemail email 
+                        div 
+                           input.updateMe.update-mymail(value =`${user.email}` type="email" name='email' placeholder=`${user.email}`)
+                    .change-mypic
+                        img(src=`/images/users/${user.photo}` alt='picture')
+                        label.choose-photo(for='photo' ) choose new picture
+                        input.file(type="file"  name='photo' id='photo')
+                    input.submit.save-settings(type="submit" value='save settings') 
+            hr
+            .update-passwords
+                h1.password-change password change 
+                form.updatePasswords(action="go")
+                    div
+                        label current password
+                        input.updateMe.current-password(type="password"  placeholder='••••••••')
+                    div
+                        label new password
+                        input.updateMe.new-password(type="password" placeholder='••••••••')
+                    div
+                        label confirm password
+                        input.updateMe.confirm-password(type="password"  placeholder='••••••••')
+                    button.submit.submitPass(type="submit") save password

@@ -1,0 +1,14 @@
+header.header
+    nav.nav.nav--tours 
+        a.nav__el.nav__el--hover(href='/') All Tours
+    .logo
+        img.logo__el(src='/images/logo-white.png' alt='LOGO OF OUR API')
+    nav.nav.nav--users    
+      - if(user)
+            a.nav__el1.nav__el--hover1 log out
+            a.user-detail(href='/profile')
+                img.user-pic(src=`/images/users/${user.photo}`, alt=`photo for ${user.name}`)
+                .user-name= user.name.split(' ')[0]
+      - else         
+            a.nav__el2.nav__el--hover1(href='/login') login
+            a.nav__el2.nav__el--hover2(href='/signup') sign up

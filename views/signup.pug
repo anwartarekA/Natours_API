@@ -1,0 +1,19 @@
+extends base
+
+block content 
+    form.formloginOrsignup
+        p create your account 
+        .inputs 
+            label(for='name').name Your name
+            .name-detail
+                input.nameField(type='text' id='name'  required)
+            label(for='email').email-address Email address
+            .email-detail
+                input.email(type='email' id='email' placeholder = 'your@example.com' required)
+            label(for='pass').pass-address Password 
+            .password-detail
+                input.pass(type='password' id='pass' placeholder='••••••••' required)
+            label(for='confirm-pass').con-pass-address Confirm Password 
+            .password-detail
+                input.confirm-pass(type='password' id='confirmPass' placeholder='••••••••' required)
+        input(type='submit' value='signup')
