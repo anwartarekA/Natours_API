@@ -1,0 +1,961 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+::selection {
+  background-color: #7dd56f;
+  color: white;
+}
+.main {
+  background-color: #faf8f8;
+  padding: 50px;
+}
+body {
+  padding: 30px;
+}
+
+header {
+  background-color: #444;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav--tours {
+  flex: 0 1 40%;
+}
+.nav__el--hover {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+}
+.nav__el--hover:hover {
+  display: block;
+  transition: all 0.3s;
+  text-shadow: 0px 8px 10px black;
+  transform: translateY(-2px);
+}
+.logo {
+  height: 100%;
+  padding: 20px 0px;
+}
+.logo__el {
+  width: 70px;
+}
+.nav--users {
+  flex: 0 1 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav__el1 {
+  margin-right: 30px;
+  text-decoration: none;
+  color: #f7f7f7;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 46px;
+  cursor: pointer;
+}
+.nav__el--hover1:hover {
+  display: block;
+  transition: all 0.3s;
+  text-shadow: 0px 8px 10px black;
+  transform: translateY(-2px);
+}
+.nav__el2 {
+  margin-right: 30px;
+  text-decoration: none;
+  color: #f7f7f7;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: #f7f7f7 1px solid;
+  border-radius: 25px;
+  padding: 10px 25px;
+}
+.nav__el2:hover {
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(-2px);
+  background-color: #f7f7f7;
+  color: #444;
+}
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 50px;
+}
+.card {
+  width: calc(80% / 3);
+  border-radius: 5px;
+  box-shadow: 0px 0px 11px 0px #cfcfcf;
+}
+.card__header {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card__picture {
+  height: 15rem;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 98%);
+}
+.card__picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card__layout {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  opacity: 0.7;
+}
+.card__header__heading {
+  width: 70%;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  padding: 10px;
+  font-size: 30px;
+  text-align: right;
+  color: #f7f7f7;
+  font-weight: 300;
+  z-index: 10;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+.card__header__heading span {
+  padding: 5px;
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.card__body {
+  padding: 30px;
+}
+.card__body__subheading {
+  color: #444;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.card__body__desc {
+  color: gray;
+  font-weight: 400;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 25px;
+}
+.card__body__details {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+.card__body__details div {
+  width: calc(100% / 2);
+  opacity: 0.7;
+}
+.card__body__details div :first-child {
+  color: #28b487;
+  font-size: 15px;
+}
+.card__body__details div :last-child {
+  color: #444;
+  margin-left: 7px;
+  font-weight: 400;
+  font-size: 12px;
+}
+.card__footer {
+  padding: 20px;
+  background-color: #f3f1f1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card__footer__details {
+  flex: 0 1 70%;
+}
+.card__footer__details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.card__footer__details__price,
+.card__footer__details__rate {
+  opacity: 0.7;
+}
+.card__footer__details__price .price,
+.card__footer__details__rate :first-child {
+  color: #444;
+  font-weight: 600;
+  font-size: 12px;
+}
+.card__footer__details__price :last-child,
+.card__footer__details__rate :last-child {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: gray;
+}
+.card__footer__btn {
+  flex: 0 1 30%;
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  border-radius: 30px;
+  padding: 15px 30px;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  border: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.card__footer__btn--hover:hover {
+  box-shadow: 0px 10px 15px 1px #d3d3d3;
+  transform: translateY(-3px);
+}
+footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__el {
+  width: 150px;
+}
+.footer__el img {
+  width: inherit;
+}
+.footer__nav {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  opacity: 0.7;
+}
+.footer__nav__list {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  column-gap: 20px;
+}
+.footer__nav__list li {
+  list-style-type: none;
+}
+.footer__nav__list li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 13px;
+  color: #444;
+  font-weight: 300;
+  transition: all 0.3s;
+}
+.footer__nav__list li a:hover {
+  color: #28b487;
+}
+.footer__nav__cright {
+  color: #444;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.main2 {
+  padding: 0;
+}
+.main-header {
+  position: relative;
+}
+.main-header__shape {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 0 84%);
+  height: calc(100vh - 30px);
+}
+.main-header__shape__layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right bottom, #28b487, #7dd56f);
+  opacity: 0.8;
+}
+.main-header-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.main-header-details {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main-header-heading {
+  margin: auto;
+  text-align: center;
+  width: 70%;
+  font-size: 50px;
+}
+.main-header-heading span {
+  box-decoration-break: clone;
+  padding: 0 10px;
+  color: white;
+  font-weight: 300;
+  text-transform: uppercase;
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+}
+.main-header-desc {
+  transform: translateY(30px);
+  margin: auto;
+  width: 55%;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+}
+.main-facts {
+  margin-top: -155px;
+  display: flex;
+  justify-content: space-around;
+}
+.statistics {
+  padding: 120px 0;
+  flex: 1 0 50%;
+  background-color: #faf8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.quick-description {
+  background-color: white;
+  flex: 1 0 50%;
+  padding: 120px 100px 100px;
+}
+.quick-facts {
+  margin-bottom: 60px;
+}
+.quick-facts h2,
+.tour-guides-details h2,
+.desc {
+  text-transform: uppercase;
+  font-size: 25px;
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  color: transparent;
+  background-clip: text;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+.guide-details-inner {
+  margin-bottom: 10px;
+}
+.start-date,
+.difficulty,
+.participants,
+.rating {
+  margin-bottom: 20px;
+}
+.start-date i,
+.difficulty i,
+.participants i,
+.rating i {
+  width: 30px;
+  font-size: 20px;
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  color: transparent;
+  background-clip: text;
+  margin-right: 5px;
+}
+.start-date .date-title,
+.difficuty-title,
+.participants-title,
+.star-title,
+.guide-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+.start-date .date-text,
+.difficulty-text,
+.participants-text,
+.star-text,
+.guide-name {
+  color: gray;
+  font-weight: 400;
+  font-size: 14px;
+}
+.tour-guides {
+  padding: 20px 0;
+}
+.guide-details img {
+  height: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.guide-details {
+  margin-bottom: 20px;
+}
+.paragraphs p {
+  color: gray;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.tour-imgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0 98%);
+  margin-top: -100px;
+  height: 60vh;
+}
+.card-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tour-imgs img {
+  width: calc(100% / 3);
+  object-fit: cover;
+  height: 100%;
+}
+#map {
+  height: 100vh;
+  clip-path: polygon(0 15%, 100% 2%, 100% 85%, 0 98%);
+  margin-top: -120px;
+}
+.reviews {
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  height: 100vh;
+  margin-top: -100px;
+  padding: 22rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reviews-card {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 70px;
+  column-gap: 50px;
+  overflow-x: scroll;
+  flex-wrap: wrap;
+  -webkit-scroll-snap-type: x mandatory;
+  -moz-scroll-snap-type: x mandatory;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+}
+.reviews-card::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+.review {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #faf8f8;
+  border-radius: 5px;
+  padding: 30px;
+  -webkit-scroll-snap-align: center;
+  -moz-scroll-snap-align: center;
+  -ms-scroll-snap-align: center;
+  scroll-snap-align: center;
+  scroll-snap-align: center;
+}
+.review-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+.review-head img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.review-head .user-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+.review-desc {
+  margin-top: 30px;
+  color: gray;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+.stars {
+  margin-top: 20px;
+}
+/* .stars i {
+  color: transparent;
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  background-clip: text;
+} */
+.active {
+  color: transparent;
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  background-clip: text;
+}
+.unactive {
+  color: gray;
+}
+.booking-tour {
+  width: 80%;
+  height: 250px;
+  margin: 150px auto;
+  background-color: #f7f7f7;
+  padding: 80px;
+  box-shadow: 0px 0px 15px 1px #d3d3d3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.green-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #7dd56f, #28b487);
+  text-align: center;
+  display: block;
+  align-content: center;
+  position: absolute;
+  top: 50px;
+  left: -55px;
+  z-index: 10;
+  box-shadow: 0px 0px 15px 1px #d3d3d3;
+}
+.booking-tour img {
+  width: 100px;
+  height: 50px;
+}
+.pics :nth-child(2) {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  left: -20px;
+  z-index: 5;
+  box-shadow: 0px 0px 15px 1px #d3d3d3;
+}
+.pics :nth-child(3) {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  z-index: 2;
+  box-shadow: 0px 0px 15px 1px #d3d3d3;
+}
+.booking-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.booking-details {
+  padding: 20px;
+  margin-left: -50px;
+}
+.booking-details h2 {
+  color: transparent;
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  background-clip: text;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 25px;
+  margin-top: -20px;
+}
+.booking-details p {
+  color: #444;
+  opacity: 0.7;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 15px;
+}
+.inner-link {
+  background: linear-gradient(to right bottom, #7dd56f, #28b487);
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.inner-link:hover {
+  box-shadow: 0px 10px 15px 1px #d3d3d3;
+  transform: translateY(-3px);
+}
+.inner-link a {
+  text-decoration: none;
+  color: #faf8f8;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.marker {
+  background-image: url('../images/pin.jpg');
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.container {
+  background-color: #f3f1f1;
+}
+form {
+  width: 40%;
+  background-color: white;
+  margin: 100px auto;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 6px #948e8e;
+}
+form p {
+  text-transform: uppercase;
+  color: transparent;
+  background: linear-gradient(to right, #7dd56f, #28b487);
+  background-clip: text;
+  font-size: 20px;
+  font-weight: 600;
+}
+form .inputs {
+  margin-top: 40px;
+}
+.name,
+.email-address,
+.pass-address,
+.con-pass-address {
+  color: gray;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+.nameField,
+.email,
+.pass,
+.confirm-pass {
+  margin-top: 10px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #f3f1f1;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 20px;
+}
+.email:focus,
+.pass:focus {
+  transition: all 0.05s;
+  border-bottom: 3px orange solid;
+}
+input[type='email']::placeholder {
+  color: rgb(155, 152, 152);
+  font-size: 13px;
+  font-weight: 400;
+}
+input[type='password']::placeholder {
+  color: rgb(155, 152, 152);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+input[type='submit'] {
+  padding: 15px 35px;
+  border-radius: 35px;
+  color: white;
+  text-align: center;
+  border: none;
+  text-transform: uppercase;
+  font-size: 17px;
+  background: linear-gradient(to right, #7dd56f, #28b487);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+input[type='submit']:hover {
+  box-shadow: 0px 10px 15px 1px #d3d3d3;
+  transform: translateY(-2px);
+}
+.user-detail {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 2px white;
+}
+.user-name {
+  color: white;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 300;
+}
+.user-name:hover,
+.user-pic:hover {
+  transition: all 0.3s;
+  text-shadow: 0px 8px 10px black;
+  transform: translateY(-2px);
+}
+body {
+  position: relative;
+}
+.alert {
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 150px);
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: capitalize;
+  opacity: 0.9;
+}
+.alert--success {
+  background: linear-gradient(to right bottom, #28b487, #7dd56f);
+}
+.alert--error {
+  background-color: rgb(211, 19, 19);
+}
+.account_page {
+  padding: 100px 50px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+aside {
+  padding: 10px 0;
+  background: linear-gradient(to bottom right, #7dd56f, #28b487);
+  color: white;
+  font-size: 16px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+aside ul {
+  list-style-type: none;
+  margin: 50px 0;
+}
+aside ul li {
+  margin-top: 15px;
+  padding: 10px 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+aside ul li:first-of-type {
+  border-left: solid white 4px;
+}
+aside ul li:first-of-type:hover {
+  padding-left: 45px;
+}
+aside ul li i {
+  margin-right: 20px;
+}
+aside ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+aside ul li:nth-of-type(2):hover,
+aside ul li:nth-of-type(3):hover,
+aside ul li:nth-of-type(4):hover {
+  border-left: solid white 4px;
+}
+.update-forms {
+  background-color: white;
+}
+.update-name-email,
+.update-passwords {
+  margin: auto;
+  width: 500px;
+  padding: 10px;
+}
+.update-name-email h1,
+.password-change {
+  margin-top: 30px;
+  color: transparent;
+  background: linear-gradient(to right, #7dd56f, #28b487);
+  background-clip: text;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 400;
+}
+.update-name-email form,
+.update-passwords form {
+  width: 100%;
+  box-shadow: 0 0 0 white;
+  margin-top: 0;
+  padding: 20px 0;
+}
+
+.update-name-email label,
+.update-passwords label {
+  color: #444;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+.update-name-email form div:not(:last-of-type) {
+  margin-top: 15px;
+}
+.update-passwords form div {
+  margin-top: 15px;
+}
+.file {
+  display: none;
+}
+
+.updateMe {
+  background-color: #f3f1f1;
+  padding: 15px 10px;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.update-name-email form input::placeholder {
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 14px;
+}
+.change-mypic {
+  margin-top: 30px;
+}
+.change-mypic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.change-mypic .choose-photo {
+  margin-left: 10px;
+  color: transparent;
+  background: linear-gradient(to right, #7dd56f, #28b487);
+  background-clip: text;
+  font-weight: 300;
+  text-transform: capitalize;
+  border-bottom: 1px solid #28b487;
+  padding-bottom: 5px;
+  transition: all 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+.change-mypic .choose-photo:hover {
+  background: linear-gradient(to right, #7dd56f, #28b487);
+  text-align: center;
+  color: white;
+  padding: 7px 5px;
+}
+
+.update-name-email form input,
+.update-passwords input {
+  margin-top: 10px;
+}
+.submit {
+  float: right;
+}
+hr {
+  color: white;
+}
+.update-passwords input:last-of-type {
+  margin-top: 30px;
+}
+
+.admin {
+  width: 80%;
+  font-size: 16px;
+  border-bottom: 2px solid white;
+  margin: 0 auto;
+  padding-bottom: 5px;
+}
+
+.error1 {
+  text-align: center;
+  color: #444;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
+}
+.error2 {
+  display: block;
+  text-align: center;
+  color: #444;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 20px;
+}
+.error3 {
+  text-align: center;
+  color: #444;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 20px;
+}
+.errors {
+  position: relative;
+  height: calc(100vh - 218px);
+}
+.errors div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.submitPass {
+  padding: 15px 35px;
+  border-radius: 35px;
+  color: white;
+  text-align: center;
+  border: none;
+  text-transform: uppercase;
+  font-size: 17px;
+  background: linear-gradient(to right, #7dd56f, #28b487);
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 30px;
+}
+.submitPass:hover {
+  box-shadow: 0px 10px 15px 1px #d3d3d3;
+  transform: translateY(-2px);
+}
