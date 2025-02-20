@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>natours | All Tours</title>
+    <link rel="'shortcut icon" type="image/jpg" href="images/logo-white.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- font awesome for some icons -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Google fonts for some fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- header -->
+      <header class="header">
+        <nav class="nav nav--tours">
+          <a href="#" class="nav__el nav__el--hover" target="_blank"
+            >ALL TOURS</a
+          >
+        </nav>
+        <div class="logo">
+          <img
+            class="logo__el"
+            src="images/logo-white.png"
+            alt="LOGO OF OUR API"
+          />
+        </div>
+        <nav class="nav nav--users">
+          <a class="nav__el1 nav__el--hover1" href="#">logout</a>
+          <a class="user-detail" href="#">
+            <img
+              class="user-pic"
+              src="./images//users/user-1.jpg"
+              alt="myphoto"
+            />
+            <div class="user-name">anwar</div>
+          </a>
+        </nav>
+      </header>
+      <!-- content account page -->
+      <section class="account_page">
+        <aside class="my-things">
+          <ul>
+            <li class="settings">
+              <a href="#" class="setting-text"><i class="fa-solid fa-gear"></i
+                > settings</a>
+            </li>
+            <li class="bookings">
+              <a href="#" class="booking-text"><i class="fa-solid fa-suitcase-rolling"></i
+                > bookings</a>
+            </li>
+            <li class="rev">
+              <a href="#" class="review-text"><i class="fa-regular fa-star"></i
+                > reviews</a>
+            </li>
+            <li class="billings">
+             <a href="#" class="billing-text"> <i class="fa-solid fa-wallet"></i
+              > billings</a>
+            </li>
+          </ul>
+          <h2 class="admin">admin</h2>
+
+          <ul class="ul2">
+            <li>
+              
+              <a href="#"><i class="fa-solid fa-list-check"></i> manage tours</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-users"></i>  manage users</a>
+            </li>
+            <li>
+               <a href="#"><i class="fa-regular fa-star"></i> manage reviews</a>
+            </li>
+            <li>
+              
+              <a href="#"> <i class="fa-solid fa-receipt"></i> manage bookings</a>
+            </li>
+          </ul>
+        </aside>
+        <div class="update-forms">
+          <div class="update-name-email">
+            <h1>your account settings</h1>
+            <form action="go">
+              <div class="update-name">
+                <label class="update-myname">name</label>
+                <div>
+                  <input
+                    class="updateMe update-name"
+                    type="text"
+                    placeholder="anwar tarek"
+                  />
+                </div>
+              </div>
+              <div class="update-email">
+                <label class="update-myemail">email</label>
+                <div>
+                  <input
+                    class="updateMe update-mail"
+                    type="email"
+                    placeholder="anwartarek719@gmail.com"
+                  />
+                </div>
+              </div>
+              <div class="change-mypic">
+                <img src="./images//users/user-1.jpg" alt="picture" />
+                <label class="choose-photo" for="choose-photo"
+                  >choose new picture</label
+                >
+                <input
+                  type="file"
+                  class="file"
+                  name="photo"
+                  id="choose-photo"
+                />
+              </div>
+              <input
+                class="submit save-settings"
+                type="submit"
+                value="save settings"
+              />
+            </form>
+          </div>
+          <hr />
+          <div class="update-passwords">
+            <h1 class="password-change">password change</h1>
+            <form action="go">
+              <div>
+                <label>current password</label>
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  class="updateMe current-password"
+                />
+              </div>
+              <div>
+                <label>new password</label>
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  class="updateMe new-password"
+                />
+              </div>
+              <div>
+                <label>confirm password</label>
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  class="updateMe confirm-password"
+                />
+              </div>
+              <input type="submit" value="save password" class="submit" />
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- footer -->
+      <footer class="footer">
+        <div class="footer__el">
+          <img
+            src="images/logo-green.png"
+            alt="image"
+            class="footer__el__logo"
+          />
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__nav__list">
+            <li><a href="#">about us</a></li>
+            <li><a href="#">download apps</a></li>
+            <li><a href="#">become a guide</a></li>
+            <li><a href="#">careers</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+          <div class="footer__nav__cright">
+            &copy;2024 by Anwar Tarek you can use this api for your own but you
+            shouldn't use it for courses or tutorials.
+          </div>
+        </nav>
+      </footer>
+    </div>
+    <script src="js/accountValidation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- header -->
+      <header class="header">
+        <nav class="nav nav--tours">
+          <a href="#" class="nav__el nav__el--hover" target="_blank"
+            >ALL TOURS</a
+          >
+        </nav>
+        <div class="logo">
+          <img
+            class="logo__el"
+            src="images/logo-white.png"
+            alt="LOGO OF OUR API"
+          />
+        </div>
+        <nav class="nav nav--users">
+          <a class="nav__el1 nav__el--hover1" href="#">login</a>
+          <a class="nav__el2 nav__el--hover2" href="#">sign up</a>
+          <!-- <a class="nav__el1 nav__el--hover1" href="#">log out</a>
+          <a class="user-detail" href="#">
+            <img class="user-pic" src="images/users/user-10.jpg" alt="picture">
+            <div class="user-name">anwar</div>
+          </a> -->
+        </nav>
+      </header>
+      <!-- form -->
+      <form>
+        <p>log into your account</p>
+        <div class="inputs">
+          <label class="email-address">Email address</label>
+          <div class="email-detail">
+            <input
+              type="email"
+              class="email"
+              placeholder="your@example.com"
+              required
+            />
+          </div>
+          <label class="pass-address">Password</label>
+          <div class="password-detail">
+            <input
+              type="password"
+              class="pass"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <input type="submit" value="login" />
+        </div>
+      </form>
+      <!-- footer -->
+      <footer class="footer">
+        <div class="footer__el">
+          <img
+            src="images/logo-green.png"
+            alt="image"
+            class="footer__el__logo"
+          />
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__nav__list">
+            <li><a href="#">about us</a></li>
+            <li><a href="#">download apps</a></li>
+            <li><a href="#">become a guide</a></li>
+            <li><a href="#">careers</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+          <div class="footer__nav__cright">
+            &copy;2024 by Anwar Tarek you can use this api for your own but you
+            shouldn't use it for courses or tutorials.
+          </div>
+        </nav>
+      </footer>
+    </div>
+    <script>
+      let email = document.querySelector('.email');
+      let password = document.querySelector('.pass');
+      let regEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      email.addEventListener('input', function () {
+        regEx.test(this.value)
+          ? (email.style.borderBottom = '3px solid green')
+          : (email.style.borderBottom = '3px solid orange');
+      });
+      password.addEventListener('input', function () {
+        if (this.value.length >= 8) {
+          password.style.borderBottom = '3px solid green';
+        } else {
+          password.style.borderBottom = '3px solid orange';
+        }
+      });
+    </script>
+    <div class="alert alert--success alert--error">asdasdasdasdasd</div>
+  </body>
+</html>
